@@ -14,3 +14,15 @@ provider "huaweicloud" {
   secret_key = var.auth_secretkey
   region     = var.region
 }
+
+module "network" {
+  source = "./modules/network"
+}
+
+module "instance" {
+  source = "./modules/instance"
+}
+
+module "instance" {
+  source = "./modules/peering"
+}
