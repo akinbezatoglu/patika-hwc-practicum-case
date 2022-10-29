@@ -2,6 +2,11 @@ variable "region" {
   default = "ap-southeast-1"
 }
 
+variable "availability_zones" {
+  type    = list(string)
+  default = ["ap-southeast-1a", "ap-southeast-1b"]
+}
+
 # External variables
 variable "auth_accesskey" {
   description = "The access key id of the user's account"
