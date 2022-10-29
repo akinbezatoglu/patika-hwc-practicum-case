@@ -11,19 +11,23 @@ variable "availability_zones" {
 variable "auth_accesskey" {
   description = "The access key id of the user's account"
   type        = string
+  sensitive = true
 }
 
 variable "auth_secretkey" {
   description = "The secret key id of the user's account"
   type        = string
+  sensitive = true
 }
 
 variable "publickey" {
   description = "The public key content of generated ssh key pair file"
   type        = string
+  sensitive = true
 }
 
 variable "keyname" {
   description = "The name of generated ssh key pair file"
   type        = string
+  sensitive = true
 }
