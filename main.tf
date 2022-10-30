@@ -15,7 +15,7 @@ locals {
 
 module "vpc" {
   source            = "./modules/vpc"
-  for_each          = local.vpcs
+  for_each          = toset(local.vpcs)
   vpc_name          = each.value.name
   vpc_cidr_block    = each.value.cidr_block
   subnet_name       = each.value.subnet
@@ -39,7 +39,7 @@ locals {
 
 module "ecs" {
   source        = "./modules/ecs"
-  for_each      = local.ecs
+  for_each      = toset(local.ecs)
   secgroup_name = var.secg_name
   subnet_id     = each.value.subnet_id
   ecs_name      = each.value.name
@@ -62,11 +62,11 @@ locals {
 
 module "rds" {
   source              = "./modules/rds"
-  for_each            = local.rds
+  for_each            = toset(local.rds)
   rds_name            = each.value.name
   rds_flavor          = var.rds_flavor
   ha_replication_mode = var.ha_replication_mode
-  vpc_id             = each.value.vpc_id
+  vpc_id              = each.value.vpc_id
   subnet_id           = each.value.subnet_id
   secgroup_id         = huaweicloud_networking_secgroup.secgroup.id
   availability_zones  = var.availability_zones
@@ -103,7 +103,7 @@ locals {
 
 module "peering" {
   source              = "./modules/vpc-peering"
-  for_each            = local.peering
+  for_each            = toset(local.peering)
   peering_name        = each.value.name
   vpc_id              = each.value.vpc_id
   peer_vpc_id         = each.value.peer_vpc_id
