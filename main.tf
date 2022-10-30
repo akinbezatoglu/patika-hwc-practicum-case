@@ -71,6 +71,7 @@ module "rds" {
   secgroup_id         = huaweicloud_networking_secgroup.secgroup.id
   availability_zones  = var.availability_zones
   db                  = var.db
+  db_password         = var.db_password
   eip_bandwidth       = var.eip_bandwidth
 }
 

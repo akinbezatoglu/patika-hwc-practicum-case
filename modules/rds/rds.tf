@@ -12,7 +12,7 @@ resource "huaweicloud_rds_instance" "rds" {
   db {
     type     = var.db.type
     version  = var.db.version
-    password = var.db.password
+    password = var.db_password
   }
   volume {
     type = var.db.volume_type

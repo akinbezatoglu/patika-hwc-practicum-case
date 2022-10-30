@@ -144,8 +144,12 @@ variable "db" {
   default = {
     type        = "MySQL"
     version     = "5.7"
-    password    = "akin@1234"
     volume_type = "CLOUDSSD"
     volume_size = "40"
   }
+}
+
+variable "db_password" {
+  type = string
+  description = "(optional) describe your variable"
 }

@@ -16,6 +16,8 @@ variable "db" {
     type = map(string)
 }
 
+variable "db_password" {}
+
 variable "eip_bandwidth" {
     type = map(string)
 }
