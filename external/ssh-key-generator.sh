@@ -24,7 +24,3 @@ fi
 
 # add .pem extension to the file
 mv ${fpath} "${fpath}.pem"
-
-# export tf env variables for keypair resource
-export TF_VAR_publickey=$(cat ${fpath}.pub)
-export TF_VAR_keyname=${fname}

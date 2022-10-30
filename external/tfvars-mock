@@ -1,0 +1,11 @@
+# Set account secrets
+auth_accesskey="your-acess-key"
+auth_secretkey="your-secret-key"
+
+# Set mysql db password in rds instance
+db_password="your-db-password"
+
+# Get ssh key file variables from ssh-key-generator.sh
+# $ source ./external/ssh-key-generator.sh
+public_key="$(cat ${fpath}.pub)"
+keypair_name="${fname}"
