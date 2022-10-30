@@ -66,7 +66,7 @@ module "rds" {
   rds_name            = each.value.name
   rds_flavor          = var.rds_flavor
   ha_replication_mode = var.ha_replication_mode
-  vpcs_id             = each.value.vpc_id
+  vpc_id             = each.value.vpc_id
   subnet_id           = each.value.subnet_id
   secgroup_id         = huaweicloud_networking_secgroup.secgroup.id
   availability_zones  = var.availability_zones
