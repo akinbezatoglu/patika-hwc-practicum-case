@@ -45,8 +45,8 @@ module "ecs" {
   ecs_name      = local.ecs[count.index].name
   ecs_flavor    = var.ecs_flavor
   ubuntu_img    = var.ubuntu_img
-  keypair_name  = var.keypair_name
-  public_key    = var.public_key
+  keypair_name  = data.external.ssh.result.key_name
+  public_key    = data.external.ssh.result.public_key
   eip_bandwidth = var.eip_bandwidth
 }
 

@@ -108,18 +108,6 @@ variable "eip_bandwidth" {
   }
 }
 
-variable "public_key" {
-  description = "The public key content of generated ssh key pair file"
-  type        = string
-  sensitive   = true
-}
-
-variable "keypair_name" {
-  description = "The name of generated ssh key pair file"
-  type        = string
-  sensitive   = true
-}
-
 variable "ubuntu_img" {
   type    = string
   default = "Ubuntu 18.04 server 64bit"
