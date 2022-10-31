@@ -8,9 +8,7 @@ variable "ecs_flavor" {}
 
 variable "ubuntu_img" {}
 
-variable "keypair_name" {}
-
-variable "public_key" {}
+variable "keypair" {}
 
 variable "eip_bandwidth" {
     type = map(string)
