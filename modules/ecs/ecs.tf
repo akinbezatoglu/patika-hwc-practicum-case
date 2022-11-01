@@ -4,12 +4,18 @@ data "huaweicloud_images_image" "os_image" {
   most_recent = true
 }
 
+# SSH keypair file
+resource "huaweicloud_compute_keypair" "keypair" {
+  name       = data.external.ssh.result.key_name
+  public_key = data.external.ssh.result.public_key
+}
+
 resource "huaweicloud_compute_instance" "ecs" {
   name            = var.ecs_name
   image_id        = data.huaweicloud_images_image.os_image.id
   flavor_id       = var.ecs_flavor
   security_groups = [var.secgroup_name]
-  key_pair        = var.keypair
+  key_pair        = huaweicloud_compute_keypair.keypair.name
 
   network {
     uuid = var.subnet_id
