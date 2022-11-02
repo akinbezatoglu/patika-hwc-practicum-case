@@ -11,3 +11,5 @@ variable "ubuntu_img" {}
 variable "eip_bandwidth" {
     type = map(string)
 }
+
+variable "keypair" {}

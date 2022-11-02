@@ -19,6 +19,14 @@ variable "auth_secretkey" {
   sensitive   = true
 }
 
+variable "key_name" {
+  type        = string
+}
+
+variable "public_key" {
+  type        = string
+}
+
 variable "secg_name" {
   type    = string
   default = "secg-allow-all"

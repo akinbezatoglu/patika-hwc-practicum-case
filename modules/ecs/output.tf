@@ -1,7 +1,3 @@
-output "keypair_name" {
-    value = huaweicloud_compute_instance.ecs.key_pair
-}
-
 output "ecs_id" {
     value = huaweicloud_compute_instance.ecs.id
 }

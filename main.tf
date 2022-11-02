@@ -37,6 +37,12 @@ locals {
   ]
 }
 
+# SSH keypair file
+resource "huaweicloud_compute_keypair" "keypair" {
+  name       = var.key_name
+  public_key = var.public_key
+}
+
 module "ecs" {
   source        = "./modules/ecs"
   count         = length(local.ecs)
@@ -46,6 +52,7 @@ module "ecs" {
   ecs_flavor    = var.ecs_flavor
   ubuntu_img    = var.ubuntu_img
   eip_bandwidth = var.eip_bandwidth
+  keypair       = huaweicloud_compute_keypair.keypair.name
 }
 
 locals {
