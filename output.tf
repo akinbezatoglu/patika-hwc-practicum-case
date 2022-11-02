@@ -1,3 +1,7 @@
+output "secg_rules" {
+    value = huaweicloud_networking_secgroup.secgroup.rules
+}
+
 output "vpc_ids" {
     value = module.vpc[*].vpc_id
 }
@@ -26,10 +30,6 @@ output "ecs_private_ips" {
     value = module.ecs[*].fixed_ip_v4
 }
 
-output "ecs_keypair_names" {
-    value = module.ecs[*].keypair_name
-}
-
 output "rds_ids" {
     value = module.rds[*].rds_id
 }
@@ -44,4 +44,12 @@ output "rds_public_ips" {
 
 output "rds_private_ips" {
     value = module.rds[*].private_ips
+}
+
+output "peering_names" {
+    value = module.peering[*].peering_name
+}
+
+output "keypair" {
+    value = "./external/.ssh/${huaweicloud_compute_keypair.keypair.name}.pem"
 }
