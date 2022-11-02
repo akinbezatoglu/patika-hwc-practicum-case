@@ -24,9 +24,3 @@ fi
 
 # add .pem extension to the file
 mv ${fpath} "${fpath}.pem"
-
-# Create a JSON object for keypair resource
-jq -n \
-  --arg publickey "$(cat ${fpath}.pub)" \
-  --arg keyname "${fname}" \
-  '{"public_key":$publickey,"key_name":$keyname}'
