@@ -1,6 +1,6 @@
 # Create ECS instance
 data "huaweicloud_images_image" "os_image" {
-  name        = var.ubuntu_img
+  name        = var.os_img
   most_recent = true
 }
 

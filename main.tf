@@ -50,7 +50,7 @@ module "ecs" {
   subnet_id     = local.ecs[count.index].subnet_id
   ecs_name      = local.ecs[count.index].name
   ecs_flavor    = var.ecs_flavor
-  ubuntu_img    = var.ubuntu_img
+  os_img        = var.ubuntu_img
   eip_bandwidth = var.eip_bandwidth
   keypair       = huaweicloud_compute_keypair.keypair.name
 }

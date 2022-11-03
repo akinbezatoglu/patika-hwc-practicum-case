@@ -6,7 +6,7 @@ variable "ecs_name" {}
 
 variable "ecs_flavor" {}
 
-variable "ubuntu_img" {}
+variable "os_img" {}
 
 variable "eip_bandwidth" {
     type = map(string)
